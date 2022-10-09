@@ -1,6 +1,6 @@
 package com.genspark.ProjectFullStack.Controller;
 
-import com.genspark.ProjectFullStack.Profile.Account;
+import com.genspark.ProjectFullStack.Entity.Account;
 import com.genspark.ProjectFullStack.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

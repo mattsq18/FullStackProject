@@ -1,7 +1,7 @@
 package com.genspark.ProjectFullStack.Service;
 
 import java.util.List;
-import com.genspark.ProjectFullStack.Profile.Account;
+import com.genspark.ProjectFullStack.Entity.Account;
 
 public interface Service {
     List<Account> getAccounts();

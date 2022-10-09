@@ -1,7 +1,7 @@
 package com.genspark.ProjectFullStack.Service;
 
 import com.genspark.ProjectFullStack.Dao.Dao;
-import com.genspark.ProjectFullStack.Profile.Account;
+import com.genspark.ProjectFullStack.Entity.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
