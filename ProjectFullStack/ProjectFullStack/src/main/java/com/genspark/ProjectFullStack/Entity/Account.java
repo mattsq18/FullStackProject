@@ -49,4 +49,14 @@ public class Account {
     public void setAdminStatus(boolean adminStatus) {
         AdminStatus = adminStatus;
     }
+
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", AdminStatus=" + AdminStatus +
+                '}';
+    }
 }
