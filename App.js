@@ -5,7 +5,7 @@ import Signup from "./Components/Signup";
 import Forum from "./Components/Forum";
 import Home from "./Components/Home";
 import {useState} from 'react'
-import {Route, Routes, Link, useNavigate, Navigate} from 'react-router-dom'
+import {Route, Routes, Link} from 'react-router-dom'
 import axios from 'axios'
 
 import {Form,Button,Container,Navbar,Nav} from 'react-bootstrap'
@@ -16,7 +16,7 @@ const api = axios.create({
 
 function App() {
 
-  const[user,setUser] = useState({name:"Jones", email:""});
+  const[user,setUser] = useState({name:"", email:""});
   const[error,setError] = useState("");
   const[check,setCheck] = useState({name:"", password:""});
 
@@ -57,6 +57,10 @@ function App() {
     if(details.password == details.passtest){
       let res = await api.post('/accounts',{username: details.name, password: details.password, AdminStatus: false});
       setError("");
+      setUser({
+        name: details.name,
+        email: ""
+      });
     } else{
       setError("Passwords must match");
     }
@@ -64,6 +68,16 @@ function App() {
 
   const deleteAccount = async details => {
     let res = await api.delete(`/accounts/${details.name}`)
+    setUser({
+      name: "",
+      email: ""
+    });
+  }
+
+  const peek = async () => {
+    api.get('/accounts').then(res => 
+      console.log(res)
+    )
   }
 
   const Logout =  () => {
@@ -81,6 +95,8 @@ function App() {
             <Link to='/Signup'><Nav.Link href="Signup">Sign Up</Nav.Link></Link>
             <Link to='/Forum'><Nav.Link href="Forum">Forum</Nav.Link></Link>
           </Nav>
+          <Navbar.Text className="fixed-right">{user.name}</Navbar.Text>
+          <Button onClick={peek}>peek</Button>
         </Container>
       </Navbar>
       <Routes>

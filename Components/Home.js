@@ -16,6 +16,7 @@ const Home = ({Logout,user,deleteAccount}) => {
               <br></br>
               <br></br>
               <Button onclick ={Logout} href="/">Logout</Button>
+              <br></br>
               <Button onclick ={deleteAccount} href="/">Delete Account</Button>
             </Form>
           </div>
@@ -25,7 +26,6 @@ const Home = ({Logout,user,deleteAccount}) => {
             <br></br>
             <br></br>
             <Link to="/Login"><Button href="Login">Sign In</Button></Link>
-            <br></br>
             <br></br>
             <Link to='/Signup'><Button >Sign Up</Button></Link>
           </Form>
