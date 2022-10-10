@@ -16,7 +16,7 @@ const api = axios.create({
 
 function App() {
 
-  const[user,setUser] = useState({name:"", email:""});
+  const[user,setUser] = useState({name:"Jones", email:""});
   const[error,setError] = useState("");
   const[check,setCheck] = useState({name:"", password:""});
 
@@ -87,7 +87,7 @@ function App() {
         <Route exact path='/' element={<Home Logout ={Logout} user = {user} deleteAccount={deleteAccount}/>} />
         <Route path='/Login' element={<Login Signin = {Signin} error={error}/>} />
         <Route path='/Signup' element={<Signup SignUp = {SignUp} error={error}/>} />
-        <Route path='/Forum' element={<Forum/>} />
+        <Route path='/Forum' element={<Forum user = {user}/>} />
       </Routes>
     </div>
   );

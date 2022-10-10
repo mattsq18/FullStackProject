@@ -32,7 +32,7 @@ const Signup = (SignUp,error) => {
             <Form.Control type="password" placeholder="Password" onChange={e => setDetails({...details, passtest: e.target.value})} value={details.passtest}/>
           </Form.Group>
 
-          <Button>Sign Up</Button>
+          <Button type="submit">Sign Up</Button>
 
         </Form>
         <h4 class="fs-6">Have an account? <Link to="/Login">log in</Link> </h4>
